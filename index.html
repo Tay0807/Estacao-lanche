@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        :root{
+            --cor--amarela: #FFD704;
+            --cor--vermelha: #740d0d;
+            --cor--bege: #ffd5043e;
+        }
+
+        
+        * {
+            font-family: 'Roboto Condensed', sans-serif !important;
+            transition: all 1s;
+        }
+
+        .amarelo{
+            height: 50px;
+        }
+        .vermelho {
+            background-image: url(img/cardapio-2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 589px;
+            background-position: center;
+        }
+        .vermelho_3{
+            background-color: #DE0A0A;
+            background-image: url(img/back-final.png);
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            min-height: 350px;
+        }
+        
+        .titulo {
+            font-family: 'Inter', sans-serif;
+            font-family: 'Kanit', sans-serif;
+            color: white;
+            font-size: 64px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 140px;
+        }
+
+        .Subtitulo {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #FFF;
+            font-size: 20px;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .botao-banner {
+            border-radius: 20px;
+            padding: 9px;
+            padding-left: 34px;
+            padding-right: 34px;
+            margin-top: 40px;
+        }
+
+        .TextoHeader img {
+            margin-right: 10px;
+        }
+
+        .banner-whats {
+            border-radius: 15px;
+
+        }
+
+        .navbar-nav .nav-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .IconeWhats {
+            margin-right: 10px;
+        }
+
+        .amarelao, .amarelo{
+            background-color: #FFD704;
+        }
+        .branco,.vermelho, .bege, .amarelao{
+            min-height: 300px;
+        }
+        .bege{
+            background-color: var(--cor--bege);
+        }
+        .verde{
+            height: 300px;
+        }
+        .cinza{
+            height: 150px;
+            border: 2px solid #DE0A0A ;
+        }
+
+        .amarelao{
+            padding: 20px;
+            min-height: auto;
+        }
+
+        .amarelao img {
+            max-width: 50%;
+        }
+
+        .quadrado_vermelho img{
+            max-width: 90%;
+            border-radius: 20px;
+        }
+
+        .img-tamanho{
+            height: 30px;
+        }
+
+        .img-tamanho-final-cima{
+            height: 120%;
+        }
+        .img-tamanho-final-baixo{
+            height: 90%;
+        }
+
+        #bnt_fale_conosco:hover, .bnt_cardapio:hover{
+            background-color: #FFD704 !important;
+            color: #DE0A0A !important;
+        }
+        
+        #exibir-td:hover{
+            cursor: pointer;
+            color: #740d0d;
+            font-size: 18px;
+        }
+
+        iframe {
+            max-width: 100%;
+        }
+
+        #social_3:hover, #social_2:hover, #social_1:hover, .nav-item:hover, #img_f_1:hover, #img_f_2:hover, #img_f_3:hover, #img_f_4:hover,#img_f_5:hover {
+            cursor: pointer; transform: scale(1.1);
+        }
+
+        #social_3 a, #social_2 a, #social_1 a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .shadow-drop-center:hover{animation:shadow-drop-center 0.9s linear both; cursor: pointer; transform: scale(1.1);}
+         @keyframes shadow-drop-center{0%{box-shadow:0 0 0 0 transparent}100%{box-shadow:0 0 20px 0 rgba(242, 5, 5, 0.833)}}
+
+         @media (max-width: 576px) {}
+
+        .titulo {
+            font-size: 36px;
+        }
+
+        .Subtitulo {
+            font-size: 16px;
+        }
+
+        .botao-banner {
+            font-size: 18px;
+            padding: 6px 20px;
+        }
+
+        .TextoHeader img {
+            margin-right: 5px;
+        }
+
+        .IconeWhats {
+            margin-right: 5px;
+            width: 18px;
+        }
+
+        .quadrado_vermelho img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .bnt_cardapio {
+            width: 6ch;
+            height: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .amarelao img {
+                max-width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .block-img {
+                display: block !important;
+
+            }
+
+
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+            box-shadow: 6px 2px 18px 2px #5d5b5b;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="header">
+        <nav class="navbar navbar-expand-lg amarelao" style="min-height: auto;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <h2 class="TextoHeader"><img src="./img/logo.png" alt="" class="mr-2"> Estação do Lanche</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#lan2">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#contato">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">
+                                <a target="_blank" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">
+                                <button class="btn btn-success banner-whats"> <img class="IconeWhats"
+                                        src="./img/whatsapp.svg" width="20px" alt="">Fale Conosco</button>
+                                    </a>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>   
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-12 vermelho">
+                    <div class="titulo">Uma delícia de sabor</div>
+                    <div class="Subtitulo">Para os clientes mais exigentes</div>
+                    <a href="#lan2">
+                        <button class="btn btn-danger botao-banner">Ver mais <strong>PRODUTOS</strong></button>
+                    </a>
+                </div>
+            </div>
+
+        
+            <div class="row amarelao">
+                <div  class="col-12 d-flex justify-content-around block-img">
+                    <img id="hamburguer" class="shadow-drop-center img-amarelao"  src="img/hamburguer.png" onclick="exibeLan()" alt="Imagem de hamburguer"/>
+                    <img id="combo" class="shadow-drop-center img-amarelao" src="img/combo.png" alt="Imagem do combo" onclick="exibeCom()" />
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center p-5 align-items-center branco" id="lan1" style="display: flex;" class="hamburguer">
+                <div class="col-md-3 col-sm-12 quadrado_vermelho">
+                    <img src="./img/cardapio-1.jpeg" alt="Hambúrguer com pão de gergilin, hambúrguer 180g e muito queijo cheddar.">
+                </div>
+
+
+                <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
+                    <p style="color: #DE0A0A;
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;">Smash burguer fenomenal</p>
+                    <p style="text-align: justify;">Pão de gergilin, hambúrguer 180g e muito queijo cheddar.</p>
+                    <p class="text-body-tertiary" >R$18,90</p>
+                </div>
+
+
+                <div class="col-md-2 col-sm-12 quadrado_vermelho">
+                    <a class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
+                    background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
+                    align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
+                    font-size: 20px; font-style: normal;font-weight: 700;" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">EU QUERO!</a>
+                </div>
+
+
+            </div>
+            <div  class="row justify-content-center p-5 align-items-center bege" id="lan2"  style="display: flex;"  class="hamburguer">
+                <div class="col-md-3 col-sm-12 quadrado_vermelho">
+                    <img src="./img/cardapio-2.jpeg" alt="Hambúrguer com pão de gergilin, hambúrguer 180g, muito queijo cheddar, salada e molho especial de pimenta.">
+                </div>
+                <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
+                    <p style="color: #DE0A0A;
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;">Extremo picante burguer</p>
+                    <p style="text-align: justify;">Pão de gergilin, hambúrguer 180g, muito queijo cheddar, salada e molho especial de pimenta. </p>
+                    <p class="text-body-tertiary" >R$24,90</p>
+                </div>
+                <div class="col-md-2 col-sm-12 quadrado_vermelho">
+                    <a class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
+                    background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
+                    align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
+                    font-size: 20px; font-style: normal;font-weight: 700;" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">EU QUERO!</a>
+                </div>
+            </div>
+        
+            <div class="row justify-content-center p-5 align-items-center branco" id="com"   style="display: flex;" class="combo">
+                <div class="col-md-3 col-sm-12 quadrado_vermelho">
+                    <img src="./img/cardapio-3.jpeg" alt="Combo feito com pão de gergilin, hambúrguer 180g e salada picles. Acompanha batata de 250g e refrigerante 350ml.">
+                </div>
+                <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
+                    <p style="color: #DE0A0A;
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;">Combo picles</p>
+                    <p style="text-align: justify;">Pão de gergilin, hambúrguer 180g e salada picles. Acompanha batata de 250g e refrigerante 350ml.</p>
+                    <p class="text-body-tertiary" >R$39,90</p>
+                </div>
+                <div class="col-md-2 col-sm-12 quadrado_vermelho">
+                    <a class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
+                    background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
+                    align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
+                    font-size: 20px; font-style: normal;font-weight: 700;" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">EU QUERO!</a>
+                </div>
+            </div>
+            <div id="a_exibir" style="display:none;align-items: center; justify-content: center;">
+                <a onclick="exibetudo()" id="exibir-td" href="">Exibir tudo</a>
+            </div>
+            <div class="row d-flex justify-content-center align-items-center" style="margin: 50px;">
+                <div class="col-md-6 col-sm-12 vermelho_2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14955.428879987114!2d-50.09073463024981!3d-21.404080969344232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949603c3732d8be7%3A0x8427a8083a123c5f!2sEldorado%20Supermercado!5e0!3m2!1spt-BR!2sbr!4v1694514756918!5m2!1spt-BR!2sbr" width="600px" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6 col-sm-12 vermelho_2">
+                    <div id="contato" class=" d-flex flex-column justify-content-center align-items-start" style="margin-bottom: 10px;">
+                        <p style="color: var(--Vermelho, #DE0A0A);
+                        font-size: 40px;
+                        font-style: normal;
+                        font-weight: 700; margin:0;">Fale conosco</p>
+                        <hr style="width: 100px; padding: 5px; background-color:#FFD704; border:none;margin-top:0;">
+                    </div>
+                    <div>
+                        <form class=" d-flex flex-column justify-content-center align-items-start">
+                            <div>
+                                <div class=" d-flex flex-column justify-content-center align-items-start" style="margin-bottom: 20px;">
+                                    <label for="nome">Informe seu nome</label>
+                                    <input style="width:100%; height:40px; border-radius: 10px; border:none; box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;" type="text" required id="nome">
+                                </div>
+                                <div class=" d-flex flex-column justify-content-center align-items-start" style="margin-bottom: 20px;">
+                                    <label for="telefone">Telefone para contato</label>
+                                    <input style="width:100%; height:40px; border-radius: 10px; border:none; box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;" type="phone" required id="telefone">
+                                </div>
+                                <div class=" d-flex flex-column justify-content-center align-items-start">
+                                    <label for="mensagem">Sua mensagem</label>
+                                    <textarea style="width:100%; border-radius: 10px; border:none; box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;" name="mensagem" id="mensagem" cols="70" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <button onclick="limpar_formulario()" id="bnt_fale_conosco" style="margin-top: 20px; width: 200px; border-radius: 20px;
+                            background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
+                            align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
+                            font-size: 24px; font-style: normal;font-weight: 700;" >Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row vermelho_3 d-flex justify-content-center align-items-center">
+                <div class="col-md-5 col-sm-12 verde">
+                    <div>
+                        <p style="color: var(--Cor-Secundaria, #FFD704);
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.27);
+                        font-size: 64px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;">Segue a <br> gente</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center align-items-center pb-3" id="social_1">
+                            <img style="margin-right: 8px;"  class="img-tamanho" src="./img/instagram.svg" alt="Logo instagram">
+                            <a href="https://www.instagram.com/"><p class="text-white" style="margin-bottom: 0px; ">Estaçãolanche</p></a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center pb-3" id="social_2">
+                            <img style="margin-right: 5px;"  class="img-tamanho"  src="./img/youtube.svg" alt="Logo instagram">
+                            <a href="https://www.youtube.com/"><p class="text-white" style="margin-bottom: 0px;">Estaçãolanchetv</p></a>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center" id="social_3">
+                            <img style="margin-right: 5px;"  class="img-tamanho"  src="./img/tiktok.svg" alt="Logo instagram">
+                            <a href="https://www.tiktok.com/pt-BR/"><p class="text-white" style="margin-bottom: 0px;">Estação lanche</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7 ">
+                    <div class="row">
+                        <div id="img_f_1" class="col-md-6 col-sm-12 cinza" style="background-image: url(img/final-1.jpeg);background-size: cover; background-position: center;"></div>
+                        <div id="img_f_2" class="col-md-6 col-sm-12 cinza" style="background-image: url(img/final-2.jpeg);background-size: cover; background-position: center;"></div>
+                        <div id="img_f_3" class="col-md-4 col-sm-12 cinza" style="background-image: url(img/final-3.jpeg);background-size: cover; background-position: center;"></div>
+                        <div id="img_f_4" class="col-md-4 col-sm-12 cinza" style="background-image: url(img/final-4.jpeg);background-size: cover; background-position: center;"></div>
+                        <div id="img_f_5" class="col-md-4 col-sm-12 cinza" style="background-image: url(img/final-5.jpeg);background-size: cover; background-position: center;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3 pb-3" style="background-color: #FFD704;">
+                    <div class="col-md-6 col-sm-12 branco_final d-flex justify-content-center align-items-center">
+                        <img style="margin-right: 5px;" src="./img/logo.png" alt="">
+                        <p style="margin-bottom: 0px;">Estação hambúrguer</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12  branco_final">
+                        <p>(18) 99123-1234 / (18) 3636-3636 <br> Rua Lorem Ipsum Nº 123, Centro-Penápolis / SP</p>
+                    </div>
+            </div>
+        </div>
+    
+    
+</body>
+
+<script>
+    function exibeLan() {
+        document.getElementById("lan1").style.display = "flex"
+        document.getElementById("lan2").style.display = "flex"
+        document.getElementById("com").style.display = "none"
+        if (document.getElementById('a_exibir').style.display === "none"){
+            document.getElementById('a_exibir').style.display = "flex"
+        }
+    }
+
+
+    function exibetudo(){
+        document.getElementById("lan1").style.display = "flex"
+        document.getElementById("lan2").style.display = "flex"
+        document.getElementById("com").style.display = "flex"
+        document.getElementById('a_exibir').style.display = "none"
+    }
+    
+    function exibeCom() {
+        document.getElementById("lan1").style.display = "none"
+        document.getElementById("lan2").style.display = "none"
+        document.getElementById("com").style.display = "flex"
+        if (document.getElementById('a_exibir').style.display === "none"){
+            document.getElementById('a_exibir').style.display = "flex"
+        }
+    }
+
+    var nome = document.getElementById('nome')
+    var telefone = document.getElementById('telefone')
+    var texto = document.getElementById('mensagem')
+    var btn = document.getElementById('bnt_fale_conosco')
+
+    function limpar_formulario(){
+        nome.value = ''
+        telefone.value = ''
+        texto.value = ''
+    }
+</script>
+</html>
