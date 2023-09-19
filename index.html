@@ -140,7 +140,7 @@
             max-width: 100%;
         }
 
-        #social_3:hover, #social_2:hover, #social_1:hover, .nav-item:hover, #img_f_1:hover, #img_f_2:hover, #img_f_3:hover, #img_f_4:hover,#img_f_5:hover {
+        #social_3:hover, #social_2:hover, #social_1:hover, .nav-item:hover, #img_f_1:hover, #img_f_2:hover, #img_f_3:hover, #img_f_4:hover,#img_f_5:hover, .img-pro:hover {
             cursor: pointer; transform: scale(1.1);
         }
 
@@ -208,12 +208,27 @@
     </style>
 </head>
 <body>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrinho de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between align-itens-center">
+          <div id="conteudo-carrinho">
+
+          </div>
+          <div id="soma_total">
+            <p>Total: R$ <span id="p_total"></span></p>
+          </div>
+        </div>
+      </div>
  
-    <div class="header">
+    <div class="header" style="z-index: 999999999999999999999999999;">
         <nav class="navbar navbar-expand-lg amarelao" style="min-height: auto;">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <h2 class="TextoHeader"><img src="./img/logo.png" alt="" class="mr-2"> Estação do Lanche</h2>
+                    <h2 class="TextoHeader"><img src="./img/logo.png" alt="" class="mr-2"> Estação Hambúrguer</h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -239,6 +254,9 @@
                                     </a>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/carrinho.png" alt=""></button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -250,7 +268,7 @@
                     <div class="titulo">Uma delícia de sabor</div>
                     <div class="Subtitulo">Para os clientes mais exigentes</div>
                     <a href="#lan2">
-                        <button class="btn btn-danger botao-banner">Ver mais <strong>PRODUTOS</strong></button>
+                        <button class="btn btn-danger botao-banner" >Ver mais <strong>PRODUTOS</strong></button>
                     </a>
                 </div>
             </div>
@@ -258,79 +276,14 @@
         
             <div class="row amarelao">
                 <div  class="col-12 d-flex justify-content-around block-img">
-                    <img id="hamburguer" class="shadow-drop-center img-amarelao"  src="img/hamburguer.png" onclick="exibeLan()" alt="Imagem de hamburguer"/>
-                    <img id="combo" class="shadow-drop-center img-amarelao" src="img/combo.png" alt="Imagem do combo" onclick="exibeCom()" />
+                    <img style="z-index: 99999;" id="hamburguer" class="shadow-drop-center img-amarelao"  src="img/hamburguer.png" onclick="exibeLan()" alt="Imagem de hamburguer"/>
+                    <img style="z-index: 99999;" id="combo" class="shadow-drop-center img-amarelao" src="img/combo.png" alt="Imagem do combo" onclick="exibeCom()" />
                 </div>
             </div>
 
 
-            <div class="row justify-content-center p-5 align-items-center branco" id="lan1" style="display: flex;" class="hamburguer">
-                <div class="col-md-3 col-sm-12 quadrado_vermelho">
-                    <img src="./img/cardapio-1.jpeg" alt="Hambúrguer com pão de gergilin, hambúrguer 180g e muito queijo cheddar.">
-                </div>
-
-
-                <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
-                    <p style="color: #DE0A0A;
-                    font-size: 30px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;">Smash burguer fenomenal</p>
-                    <p style="text-align: justify;">Pão de gergilin, hambúrguer 180g e muito queijo cheddar.</p>
-                    <p class="text-body-tertiary" >R$18,90</p>
-                </div>
-
-
-                <div class="col-md-2 col-sm-12 quadrado_vermelho">
-                    <a class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
-                    background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
-                    align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
-                    font-size: 20px; font-style: normal;font-weight: 700;" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">EU QUERO!</a>
-                </div>
-
-
-            </div>
-            <div  class="row justify-content-center p-5 align-items-center bege" id="lan2"  style="display: flex;"  class="hamburguer">
-                <div class="col-md-3 col-sm-12 quadrado_vermelho">
-                    <img src="./img/cardapio-2.jpeg" alt="Hambúrguer com pão de gergilin, hambúrguer 180g, muito queijo cheddar, salada e molho especial de pimenta.">
-                </div>
-                <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
-                    <p style="color: #DE0A0A;
-                    font-size: 30px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;">Extremo picante burguer</p>
-                    <p style="text-align: justify;">Pão de gergilin, hambúrguer 180g, muito queijo cheddar, salada e molho especial de pimenta. </p>
-                    <p class="text-body-tertiary" >R$24,90</p>
-                </div>
-                <div class="col-md-2 col-sm-12 quadrado_vermelho">
-                    <a class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
-                    background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
-                    align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
-                    font-size: 20px; font-style: normal;font-weight: 700;" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">EU QUERO!</a>
-                </div>
-            </div>
-        
-            <div class="row justify-content-center p-5 align-items-center branco" id="com"   style="display: flex;" class="combo">
-                <div class="col-md-3 col-sm-12 quadrado_vermelho">
-                    <img src="./img/cardapio-3.jpeg" alt="Combo feito com pão de gergilin, hambúrguer 180g e salada picles. Acompanha batata de 250g e refrigerante 350ml.">
-                </div>
-                <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
-                    <p style="color: #DE0A0A;
-                    font-size: 30px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;">Combo picles</p>
-                    <p style="text-align: justify;">Pão de gergilin, hambúrguer 180g e salada picles. Acompanha batata de 250g e refrigerante 350ml.</p>
-                    <p class="text-body-tertiary" >R$39,90</p>
-                </div>
-                <div class="col-md-2 col-sm-12 quadrado_vermelho">
-                    <a class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
-                    background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
-                    align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
-                    font-size: 20px; font-style: normal;font-weight: 700;" href="https://api.whatsapp.com/send/?phone=%2B5518998262605&text&type=phone_number&app_absent=0">EU QUERO!</a>
-                </div>
-            </div>
+            <div id="contaier-exibicoes"></div>
+                
             <div id="a_exibir" style="display:none;align-items: center; justify-content: center;">
                 <a onclick="exibetudo()" id="exibir-td" href="">Exibir tudo</a>
             </div>
@@ -420,6 +373,120 @@
 </body>
 
 <script>
+    var lanches = [{
+        nome: 'Smash burguer fenomenal',
+        preco: 18.90,
+        componentes: 'Pão de gergilin, hambúrguer 180g e muito queijo cheddar.',
+        quant:0,
+        img: './img/cardapio-1.jpeg',
+        id : 'lan1',
+        class: 'hamburguer'
+    },
+    {
+        nome: 'Extremo Picante Burguer',
+        preco: 24.90,
+        componentes: 'Pão de gergilin, hambúrguer 180g, muito queijo cheddar, salada e molho especial de pimenta.',
+        quant:0,
+        img: './img/cardapio-2.jpeg',
+        id : 'lan2',
+        class: 'hamburguer'
+    },
+    {
+        nome: 'Combo Picles',
+        preco: 39.90,
+        componentes: 'Pão de gergilin, hambúrguer 180g e salada picles. Acompanha batata de 250g e refrigerante 350ml.',
+        quant:0,
+        img: './img/cardapio-3.jpeg',
+        id : 'com',
+        class: 'combo'
+    }]
+
+    var container_produtos = document.getElementById('contaier-exibicoes')
+
+    for(x of lanches){
+        var html = ''
+
+        html += `<div class="row justify-content-center p-5 align-items-center branco" id="${x.id}" style="display: flex;" class="${x.class}">
+            <div class="col-md-3 col-sm-12 quadrado_vermelho">
+                <img src="${x.img}" class="img-pro" alt="${x.componentes}">
+            </div>
+            <div class="col-md-5 col-sm-12 quadrado_vermelho d-flex flex-column justify-content-center align-items-start">
+                <p style="color: #DE0A0A;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;">${x.nome}</p>
+                <p style="text-align: justify;">${x.componentes}</p>
+                <p class="text-body-tertiary" >R$${x.preco}</p>
+            </div>
+            <div class="col-md-2 col-sm-12 quadrado_vermelho">
+                <button class="bnt_cardapio" style="margin-top: 20px; width: 200px; border-radius: 20px;
+                background:#DE0A0A; padding: 8px 45px 8px 46px; border:none; justify-content: center;
+                align-items: center; display: inline-flex;  box-shadow: rgba(0, 0, 0, 0.318) 1px 1px 1px 1px;color: #FFD704;
+                font-size: 20px; font-style: normal;font-weight: 700;" onclick="add_carrinho(${lanches.indexOf(x)})" >EU QUERO!</button>
+            </div>
+        </div>`
+
+        container_produtos.innerHTML += html
+    }
+
+    var bnt_carrinho = document.getElementsByClassName('bnt_cardapio')
+    var local_carrinho = document.getElementById('conteudo-carrinho')
+    var p_carrinho = document.getElementsByClassName('p_carrinho')
+    var total = 0
+    function add_carrinho(indice){
+        lanches[indice].quant += 1
+
+        
+        if(lanches[indice].quant == 1){
+            var html_carrinho = ''
+
+            html_carrinho += `<div id="p_${indice}"class="row" style="background-color: rgba(0, 0, 0, 0.074); padding: 5px; border-radius: 10px;margin:10px;">
+
+            <div class="col-4 d-flex flex-column justify-content-center align-items-center" >
+                <img style="box-shadow: 6px 2px 18px 2px #5d5b5b; height: 100px; width:100px;" src="${lanches[indice].img}" alt="">
+            </div>
+            <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+                <p style="color: #DE0A0A;font-size: 15px;font-style: normal;font-weight: 700;line-height: normal;text-align:center;">${lanches[indice].nome}</p>
+                <p class="text-body-tertiary" >R$${lanches[indice].preco}</p>
+            </div>
+            <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+                <button style="background-color: transparent; border:none; " onclick="subtrai_carrinho(${indice})">-</button>
+                <button class="p_carrinho" style="background-color: transparent; border:none;text-align:center; font-size:10px;" id="q_${indice}">${lanches[indice].quant}</button>
+                <button style="background-color: transparent; border:none; " onclick="soma_carrinho(${indice})" >+</button>
+            </div>
+          </div>`
+          
+          
+          local_carrinho.innerHTML += html_carrinho
+
+        } else{
+            document.getElementById("q_" + indice).innerHTML = lanches[indice].quant
+        }
+        
+        somaTudo()
+    }
+
+
+    function soma_carrinho(indice){
+        lanches[indice].quant += 1
+        document.getElementById("q_" + indice).innerHTML = lanches[indice].quant
+
+        somaTudo()
+    }
+
+    function subtrai_carrinho(indice){
+        if(lanches[indice].quant > 0) {
+            lanches[indice].quant -= 1
+            document.getElementById("q_" + indice).innerHTML = lanches[indice].quant
+        } else {
+            document.getElementById(`p_${indice}`).style.display = 'none' 
+        }
+
+        somaTudo()
+    }
+
+
     function exibeLan() {
         document.getElementById("lan1").style.display = "flex"
         document.getElementById("lan2").style.display = "flex"
@@ -444,6 +511,19 @@
         if (document.getElementById('a_exibir').style.display === "none"){
             document.getElementById('a_exibir').style.display = "flex"
         }
+    }
+
+    function somaTudo () {
+        let total = 0
+
+        for(let x of lanches) {
+            let soma = (parseFloat(x.quant) * parseFloat(x.preco))
+            console.log(soma)
+
+            total += soma
+        }
+
+        document.getElementById("p_total").innerHTML = total.toFixed(2)
     }
 
     var nome = document.getElementById('nome')
